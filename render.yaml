@@ -1,0 +1,66 @@
+services:
+  - type: web
+    name: project-testing
+    env: php
+    plan: free
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      npm ci --ignore-scripts && npm run build
+      php artisan config:clear
+      php artisan event:cache
+      php artisan route:cache
+      php artisan view:cache
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://project-testing.onrender.com
+      - key: APP_NAME
+        value: "Perusahaan Testing Project"
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_DATABASE
+        fromDatabase:
+          name: project-testing-db
+          property: database
+      - key: DB_HOST
+        fromDatabase:
+          name: project-testing-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: project-testing-db
+          property: port
+      - key: DB_USERNAME
+        fromDatabase:
+          name: project-testing-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: project-testing-db
+          property: password
+      - key: DB_SSLMODE
+        value: require
+      - key: FILESYSTEM_DISK
+        value: public
+      - key: SESSION_DRIVER
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: LOG_LEVEL
+        value: info
+      - key: MAIL_MAILER
+        value: log
+
+databases:
+  - name: project-testing-db
+    plan: free
+    region: singapore
+    postgresMajorVersion: 16
