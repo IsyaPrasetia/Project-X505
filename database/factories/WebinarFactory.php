@@ -22,7 +22,6 @@ class WebinarFactory extends Factory
             'skp' => fake()->randomNumber(2),
             'price' => fake()->randomNumber(5),
             'price2' => null,
-            'has_two_prices' => false,
             'register_link' => fake()->url(),
             'lms_link' => null,
             'professions' => 'Dokter Umum',

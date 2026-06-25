@@ -11,7 +11,7 @@ class Webinar extends Model
 
     protected $fillable = [
         'tag', 'title', 'date', 'time', 'flyer', 'platform', 'duration', 'skp',
-        'price', 'price2', 'has_two_prices', 'register_link', 'lms_link', 'professions',
+        'price', 'price2', 'register_link', 'lms_link', 'professions',
         'admin_left_name', 'admin_left_link', 'admin_right_name', 'admin_right_link',
         'health_channel_text', 'health_channel_link', 'health_channel_btn_text',
         'speakers', 'is_active', 'register_closed', 'wa_message',
@@ -22,7 +22,6 @@ class Webinar extends Model
     {
         return [
             'date' => 'date',
-            'has_two_prices' => 'boolean',
             'is_active' => 'boolean',
             'register_closed' => 'boolean',
             'speakers' => 'array',

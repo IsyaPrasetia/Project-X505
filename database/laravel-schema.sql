@@ -133,7 +133,6 @@ CREATE TABLE `webinars` (
   `skp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `has_two_prices` tinyint(1) NOT NULL DEFAULT '0',
   `register_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `lms_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `professions` text COLLATE utf8mb4_unicode_ci,
@@ -224,7 +223,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2026_05_29_181244_create_webinars_table', 1),
 ('2026_05_29_184455_create_speakers_table', 1),
 ('2026_05_29_184456_create_testimonials_table', 1),
-('2026_05_29_184456_create_contact_settings_table', 1),
+('2026_05_29_184457_create_contact_settings_table', 1),
 ('2026_05_29_184508_add_register_closed_to_webinars_table', 1),
 ('2026_05_29_184701_add_stars_to_testimonials_table', 1),
 ('2026_05_29_185934_add_wa_message_to_webinars_table', 1),
@@ -233,8 +232,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('2026_05_29_200309_add_date_to_speakers_table', 1),
 ('2026_05_29_200314_add_date_to_testimonials_table', 1),
 ('2026_05_30_030631_add_bank_fields_to_webinars_table', 1),
-('2026_05_30_131436_add_lms_link_to_webinars_table', 1),
-('2026_06_01_000000_change_title_to_text_in_webinars_table', 1);
+('2026_05_30_131436_add_lms_link_to_webinars_table', 1);
 
 -- -----------------------------------------------------------
 -- 14. SEED: Admin User (password: admin123)

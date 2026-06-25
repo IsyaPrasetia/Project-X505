@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('skp')->nullable();
             $table->string('price')->nullable();
             $table->string('price2')->nullable();
-            $table->boolean('has_two_prices')->default(false);
             $table->string('register_link')->nullable();
             $table->text('professions')->nullable();
             $table->string('admin_left_name')->nullable();

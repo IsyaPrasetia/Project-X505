@@ -16,7 +16,7 @@ class SpeakerFactory extends Factory
             'title' => fake()->jobTitle(),
             'inst' => fake()->company(),
             'avatar' => null,
-            'gender' => fake()->randomElement(['L', 'P']),
+            'gender' => fake()->randomElement(['male', 'female']),
             'sort_order' => 0,
             'is_active' => true,
             'date' => fake()->date(),
